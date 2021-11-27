@@ -87,10 +87,11 @@ public class TarotService {
         TarotCard card = null;
         try {
             card = dao.searchData(n);
+            card.setPosition(cutCard.isPosition());
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
-        card.setPosition(cutCard.isPosition());
+
         System.out.println("您切的牌是第" + n + "張\n" + card + "\n");
     }
 
